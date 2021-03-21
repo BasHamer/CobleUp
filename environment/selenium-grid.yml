@@ -1,0 +1,35 @@
+version: '3.5'
+services:
+  firefox:
+    image: selenium/node-firefox
+    depends_on:
+      - hub
+    environment:
+      HUB_HOST: hub
+    volumes:
+      - ./downloads:/home/seluser/Downloads
+    networks:
+      - my-proxy-net
+
+  chrome:
+    image: selenium/node-chrome
+    depends_on:
+      - hub
+    environment:
+      HUB_HOST: hub
+    volumes:
+      - ./downloads:/home/seluser/Downloads
+    networks:
+      - my-proxy-net
+
+  hub:
+    image: selenium/hub
+    ports:
+      - "4444:4444"
+    networks:
+      - my-proxy-net
+
+networks:
+  my-proxy-net:
+    external:
+      name: coble-up-net
