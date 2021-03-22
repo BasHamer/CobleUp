@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CobleUp.BlazorApp", "CobleUp.BlazorApp\CobleUp.BlazorApp.csproj", "{C125172A-55A2-484F-870D-EDF1616AADA5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CobleUp.BlazorApp", "CobleUp.BlazorApp\CobleUp.BlazorApp.csproj", "{C125172A-55A2-484F-870D-EDF1616AADA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CobleUp.Worker", "CobleUp.Worker\CobleUp.Worker.csproj", "{56B73B74-03D2-4E8F-BEB1-142E798BCF99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CobleUp.Contract", "CobleUp.Contract\CobleUp.Contract.csproj", "{93B7E8CD-44DE-4A2A-8099-8D11E7EBD074}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{C125172A-55A2-484F-870D-EDF1616AADA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C125172A-55A2-484F-870D-EDF1616AADA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C125172A-55A2-484F-870D-EDF1616AADA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56B73B74-03D2-4E8F-BEB1-142E798BCF99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56B73B74-03D2-4E8F-BEB1-142E798BCF99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56B73B74-03D2-4E8F-BEB1-142E798BCF99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56B73B74-03D2-4E8F-BEB1-142E798BCF99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93B7E8CD-44DE-4A2A-8099-8D11E7EBD074}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93B7E8CD-44DE-4A2A-8099-8D11E7EBD074}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93B7E8CD-44DE-4A2A-8099-8D11E7EBD074}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93B7E8CD-44DE-4A2A-8099-8D11E7EBD074}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using CobleUp.BlazorApp.Data;
+using CobleUp.BlazorApp.Services;
 
 namespace CobleUp.BlazorApp
 {
@@ -29,6 +30,7 @@ namespace CobleUp.BlazorApp
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+            services.AddSingleton<GitRequestService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

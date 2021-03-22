@@ -1,7 +1,9 @@
 ﻿@page "/fetchdata"
 
 @using CobleUp.BlazorApp.Data
+@using CobleUp.BlazorApp.Services
 @inject WeatherForecastService ForecastService
+@inject GitRequestService GitRequestService
 
 <h1>Weather forecast</h1>
 
@@ -36,11 +38,19 @@ else
     </table>
 }
 
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+
 @code {
     private WeatherForecast[] forecasts;
 
     protected override async Task OnInitializedAsync()
     {
         forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
+    }
+
+    private async void IncrementCount()
+    {
+        GitRequestService.RequestRepo("bubbles");
     }
 }
