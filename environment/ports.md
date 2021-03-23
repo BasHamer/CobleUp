@@ -12,6 +12,8 @@ port mappings
 8004 zoonavigator 
 8005 mongo-express 
 
+8008 CobleUp.BlazorApp
+
 8081 kafka schema
 8082 kafka-rest-proxy
 8083 kafka-connect

@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using CobleUp.BlazorApp.Data;
 using CobleUp.BlazorApp.Services;
+using CobleUp.BlazorApp.Configuration;
 
 namespace CobleUp.BlazorApp
 {
@@ -27,6 +28,7 @@ namespace CobleUp.BlazorApp
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddConfig(Configuration);
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
