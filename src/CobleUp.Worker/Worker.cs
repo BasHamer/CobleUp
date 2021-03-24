@@ -3,30 +3,38 @@ using System.Collections.Generic;
 using System.Text;
 using System.Collections.Generic;
 using Confluent.Kafka;
+using CobleUp.Worker.Configuration;
+using Microsoft.Extensions.Options;
 
 namespace CobleUp.Worker
 {
     public class Worker
     {
-        public void Work()
+        public Worker(IOptions<KafkaSettings> kafkaSettings)
+        {
+            KafkaSettings = kafkaSettings.Value;
+        }
+
+        private KafkaSettings KafkaSettings { get; }
+
+        public void Work(System.Threading.CancellationToken token)
         {
             var config = new ConsumerConfig
             {
-                BootstrapServers = "host1:9092,host2:9092",
+                BootstrapServers = KafkaSettings.BootstrapServers,
                 GroupId = "foo",
                 AutoOffsetReset = AutoOffsetReset.Earliest
             };
 
             using (var consumer = new ConsumerBuilder<Ignore, string>(config).Build())
             {
-                consumer.Subscribe(topics);
+                consumer.Subscribe(KafkaSettings.SearchTopic);
 
-                while (!cancelled)
+                while (!token.IsCancellationRequested)
                 {
-                    var consumeResult = consumer.Consume(cancellationToken);
+                    var consumeResult = consumer.Consume(token);
 
-                    // handle consumed message.
-                    ...
+                    Console.WriteLine(consumeResult.Message);
                  }
 
                 consumer.Close();
