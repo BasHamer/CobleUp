@@ -5,11 +5,11 @@ VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CobleUp.BlazorApp", "CobleUp.BlazorApp\CobleUp.BlazorApp.csproj", "{C125172A-55A2-484F-870D-EDF1616AADA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CobleUp.Worker", "CobleUp.Worker\CobleUp.Worker.csproj", "{56B73B74-03D2-4E8F-BEB1-142E798BCF99}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CobleUp.Contract", "CobleUp.Contract\CobleUp.Contract.csproj", "{93B7E8CD-44DE-4A2A-8099-8D11E7EBD074}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CobleUp.Database", "CobleUp.Database\CobleUp.Database.sqlproj", "{62623821-9B87-4828-9BA9-82FB93FBED11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CobleUp.Workers.Searcher", "CobleUp.Workers.Searcher\CobleUp.Workers.Searcher.csproj", "{885A5016-AC06-4AF4-9757-E412A1A22306}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		{C125172A-55A2-484F-870D-EDF1616AADA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C125172A-55A2-484F-870D-EDF1616AADA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C125172A-55A2-484F-870D-EDF1616AADA5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{56B73B74-03D2-4E8F-BEB1-142E798BCF99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{56B73B74-03D2-4E8F-BEB1-142E798BCF99}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{56B73B74-03D2-4E8F-BEB1-142E798BCF99}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{56B73B74-03D2-4E8F-BEB1-142E798BCF99}.Release|Any CPU.Build.0 = Release|Any CPU
 		{93B7E8CD-44DE-4A2A-8099-8D11E7EBD074}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{93B7E8CD-44DE-4A2A-8099-8D11E7EBD074}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93B7E8CD-44DE-4A2A-8099-8D11E7EBD074}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,6 +31,10 @@ Global
 		{62623821-9B87-4828-9BA9-82FB93FBED11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62623821-9B87-4828-9BA9-82FB93FBED11}.Release|Any CPU.Build.0 = Release|Any CPU
 		{62623821-9B87-4828-9BA9-82FB93FBED11}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{885A5016-AC06-4AF4-9757-E412A1A22306}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{885A5016-AC06-4AF4-9757-E412A1A22306}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{885A5016-AC06-4AF4-9757-E412A1A22306}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{885A5016-AC06-4AF4-9757-E412A1A22306}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

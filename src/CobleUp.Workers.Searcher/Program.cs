@@ -1,15 +1,22 @@
-﻿using Microsoft.AspNetCore.Hosting;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Threading;
+using Microsoft.Extensions.Logging;
 
-namespace CobleUp.Worker
+namespace CobleUp.Workers.Searcher
 {
     public class Program
     {
         public static void Main(string[] args)
         {
+            var webHost = CreateHostBuilder(args).Build();
             var CancellationTokenSource = new CancellationTokenSource();
             Console.CancelKeyPress += (s, e) =>
             {
@@ -18,7 +25,7 @@ namespace CobleUp.Worker
                 e.Cancel = true;
             };
 
-            var webHost = CreateHostBuilder(args).Build();
+            
             var worker = (Worker)webHost.Services.GetService(typeof(Worker));
             worker.Work(CancellationTokenSource.Token);
 
@@ -29,19 +36,19 @@ namespace CobleUp.Worker
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureAppConfiguration((hostingContext, configuration) =>
+                .ConfigureAppConfiguration((hostingContext, config) =>
                 {
-                    configuration.Sources.Clear();
+                    config.Sources.Clear();
 
                     IHostEnvironment env = hostingContext.HostingEnvironment;
 
-                    configuration
+                    config
                         .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                         .AddJsonFile($"appsettings.{env.EnvironmentName}.json", true, true);
 
-                    IConfigurationRoot configurationRoot = configuration.Build();
-                    Startup = new Startup(configurationRoot, CancellationTokenSource);
+                    IConfigurationRoot configurationRoot = config.Build();
+                    Startup = new Startup(configurationRoot);
                 })
-                .ConfigureServices(x=>Startup.ConfigureServices(x));
+                .ConfigureServices(x => Startup.ConfigureServices(x));
     }
 }

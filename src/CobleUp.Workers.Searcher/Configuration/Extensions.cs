@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CobleUp.Worker.Configuration
+namespace CobleUp.Workers.Searcher.Configuration
 {
     public static class Extensions
     {
